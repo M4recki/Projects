@@ -115,7 +115,7 @@ while Lives > 0:
     print(Display)
     print()
 
-    #Wow
+    #Won
     if Letter in GuessedLetters:
         print("Congratulasions you guessed word!")
         break
