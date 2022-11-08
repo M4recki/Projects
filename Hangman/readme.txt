@@ -1,0 +1,1 @@
+You need to download both files ("Hangman" and "Words") for the main program to work properly
