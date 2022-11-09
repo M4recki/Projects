@@ -1,6 +1,5 @@
 import random
 from Words import words
-from enum import Enum
 
 HangmanStages = ['''
   +---+
@@ -62,7 +61,6 @@ HangmanStages = ['''
 # Objects
 RandomWord = random.choice(words)
 Lives = 7
-EndOfTheGame = False
 
 # Lists
 GuessedLetters = []
