@@ -10,6 +10,7 @@ MaxValue = 21
 
 
 def CardDrawForUser():
+    '''Draws 2 cards for the user from the deck of cards'''
     Values = list(Cards.values())
     UsersCard1 = random.choice(Values)
     UsersCard2 = random.choice(Values)
@@ -18,6 +19,7 @@ def CardDrawForUser():
     return UsersCard1, UsersCard2
 
 def CardDrawForComputer():
+    '''Draws 2 cards for the computer from the deck of cards'''
     Values = list(Cards.values())
     ComputersCard1 = random.choice(Values)
     ComputersCard2 = random.choice(Values)
@@ -26,18 +28,21 @@ def CardDrawForComputer():
     return ComputersCard1, ComputersCard2
 
 def NewCardForUser():
+    '''Draws 1 card for the user from the deck of cards'''
     Values = list(Cards.values())
     UsersCard3 = random.choice(Values)
     DrawedCardsByUser.append(UsersCard3)
     return UsersCard3
 
 def NewCardForComputer():
+    '''Draws 1 card for the computer from the deck of cards'''
     Values = list(Cards.values())
     ComputersCard3 = random.choice(Values)
     DrawedCardsByComputer.append(ComputersCard3)
     return ComputersCard3
 
 def Check():
+    '''Checks who won'''
     if sum(DrawedCardsByUser) > MaxValue:
         print("You went over. You lose.")
         PlayAgain = input("Do you want to play a game of Blackjack? Type 'y' - yes or 'n' - no: ")
@@ -100,6 +105,7 @@ def Check():
             quit()
 
 def FinalCards():
+    '''prints final user and computer cards'''
     print("Your final cards:", DrawedCardsByUser, "final score:", sum(DrawedCardsByUser))
     print()
     print("Computer's final cards:", DrawedCardsByComputer, "final score:", sum(DrawedCardsByComputer))
@@ -107,11 +113,13 @@ def FinalCards():
     Check()
 
 def ClearEverything():
+    '''Clears both terminal and lists'''
     clear()
     DrawedCardsByUser.clear()
     DrawedCardsByComputer.clear()
 
 def Game():
+    '''Main function'''
     while True:
 
         Start = input("Welcome to the Blackjack game. Would you like to play? 'y' - yes 'n' - no: ")
