@@ -27,6 +27,8 @@ def select_folder():
 
     if folder_path:
         file_path_description.configure(text=folder_path, wraplength=300)
+    else:
+        file_path_description.configure(text="N/A")
 
 
 def success():
