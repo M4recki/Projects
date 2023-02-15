@@ -26,7 +26,7 @@ def select_folder():
     str(element_from_location)
 
     if folder_path:
-        file_path_description.configure(text=folder_path, wraplength=300)
+        file_path_description.configure(text=f"File location: {folder_path}", wraplength=300)
     else:
         file_path_description.configure(text="N/A")
 
@@ -152,7 +152,7 @@ choose_location.grid(row=3, column=1, pady=10)
 
 # Location Label
 file_path_description = ctk.CTkLabel(
-    master=App, text="N/A", text_color="#FF4949", font=font)
+    master=App, text="File location: N/A", text_color="#FF4949", font=font)
 file_path_description.grid(row=4, column=1, padx=10, pady=0)
 
 
