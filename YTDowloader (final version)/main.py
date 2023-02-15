@@ -26,9 +26,7 @@ def select_folder():
     str(element_from_location)
 
     if folder_path:
-        choose_location.configure(text=folder_path)
-    else:
-        choose_location.configure(text="Choose a file location")
+        file_path_description.configure(text=folder_path, wraplength=300)
 
 
 def success():
@@ -104,7 +102,7 @@ def remember_choice():
 
 ctk.set_appearance_mode("System")
 App = ctk.CTk()
-App.geometry("700x600")
+App.geometry("700x650")
 App.title("YT Downloader by Marek Baranski")
 
 # Variables
@@ -148,26 +146,32 @@ App.iconbitmap("3721679-youtube_108064.ico")
 # Location
 choose_location = ctk.CTkButton(master=App, width=300, text="Choose a file location",
                                 corner_radius=5, fg_color="#FF4949", hover_color="#CC3F3F", command=select_folder, text_color="black")
-choose_location.grid(row=3, column=1)
+choose_location.grid(row=3, column=1, pady=10)
+
+# Location Label
+file_path_description = ctk.CTkLabel(
+    master=App, text="N/A", text_color="#FF4949", font=font)
+file_path_description.grid(row=4, column=1, padx=10, pady=0)
+
 
 # Link
 link_entry = ctk.CTkEntry(master=App, placeholder_text="Input YT video link",
                           width=300, fg_color="#FF8D29", placeholder_text_color="black", text_color="black", border_color="#FF8D29", corner_radius=5)
-link_entry.grid(row=4, column=1, pady=10)
+link_entry.grid(row=5, column=1, pady=10)
 
 #Mp4 / Mp3
 
 mp4_button = ctk.CTkRadioButton(
     master=App, text="Mp4", text_color="#FFCD38", hover_color="#FFCD38", fg_color="#FFCD38", variable=selected_format, command=remember_choice, value=1)
-mp4_button.grid(row=5, column=1, columnspan=1, pady=10)
+mp4_button.grid(row=6, column=1, columnspan=1, pady=10)
 
 mp3_button = ctk.CTkRadioButton(
     master=App, text="Mp3", text_color="#FFCD38", hover_color="#FFCD38", fg_color="#FFCD38", variable=selected_format, command=remember_choice, value=2)
-mp3_button.grid(row=5, column=1, columnspan=2, pady=10)
+mp3_button.grid(row=6, column=1, columnspan=2, pady=10)
 
 # Download
 download_vid = ctk.CTkButton(master=App, width=300, text="Download video", corner_radius=5,
                              fg_color="#FFCD38", hover_color="#E6B924", text_color="black", command=download_video)
-download_vid.grid(row=6, column=1, pady=10)
+download_vid.grid(row=7, column=1, pady=10)
 
 App.mainloop()
