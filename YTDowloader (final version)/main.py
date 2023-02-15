@@ -26,9 +26,10 @@ def select_folder():
     str(element_from_location)
 
     if folder_path:
-        file_path_description.configure(text=f"File location: {folder_path}", wraplength=300)
+        file_path_description.configure(
+            text=f"File location: {folder_path}", wraplength=300)
     else:
-        file_path_description.configure(text="N/A")
+        file_path_description.configure(text="File location: N/A")
 
 
 def success():
